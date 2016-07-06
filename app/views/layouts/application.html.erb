@@ -24,9 +24,7 @@
     <div class="sub">
     <div class="wrapper">
         <div class="view_site"><a href="/talent/" target="_blank"><img src="/img/btn_01.png" alt="WEBページ確認"></a></div>
-                <p class="crumb">
-            <a href="/site/logout">[ログアウト]</a>　
-            <a href="/administrators/">管理画面TOP</a>                            > 管理者一覧                </p>
+                <p class="crumb"><%= render 'bread', {mypage: @mypage, parent: @parent} %></p>
     </div><!--/wrapper-->
     </div><!--/sub-->
 </header>

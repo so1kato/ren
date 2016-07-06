@@ -1,0 +1,13 @@
+    <p class="crumb">
+      <a href="">[ログアウト]</a>　
+      <a href="">管理画面TOP</a>
+<% if !@parent.nil? %>
+  <% @parent.each do |href, page| %>
+> <a href="<%= href %>"><%= page %></a>
+  <% end %>
+<% end %>
+
+<% if !@mypage.nil? %>
+> <%= @mypage %>
+<% end %>
+    </p>
