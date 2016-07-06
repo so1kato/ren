@@ -1,29 +1,38 @@
-<%= form_for(@administrator) do |f| %>
-  <% if @administrator.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@administrator.errors.count, "error") %> prohibited this administrator from being saved:</h2>
 
-      <ul>
-      <% @administrator.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= form_for(@administrator) do |f| %>
+        <% if @administrator.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@administrator.errors.count, "error") %> prohibited this administrator from being saved:</h2>
+            <ul>
+            <% @administrator.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <table width="0" border="0" cellspacing="0" cellpadding="0" class="input_detail">
+        <tr>
+            <th scope="col">名前</th>
+            <td>
+                <div class="input text"><%= f.text_field :name, size: 50, id: 'name', class: '' %></div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="col">メール</th>
+            <td>
+                <div class="input text"><%= f.text_field :email, size: 50, id: 'email', class: ''  %></div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="col">パスワード</th>
+            <td>
+                <div class="input password"><%= f.password_field :password, size: 50, id: 'password', class: ''  %></div>
+            </td>
+        </tr>
+    </table>
+    <p class="btn_add">
+        <input name="save" type="image" src="/img/btn_add.png" alt="登録">
+    </p>
+    </form>
+    <% end %>

@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+/* 	basic setting
+---------------------------------------------------------- */
+
+body {
+	font-size: 14px;
+	font-family:'メイリオ',Meiryo,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif;
+	color: #333333;
+}
+
+/* a */
+a {
+	overflow:hidden;
+	text-decoration: underline;
+	}
+a:link {
+	color: #333;
+	text-decoration: none;
+}
+a:visited {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+	color: #333;
+	text-decoration:none;
+}
+
+.sp-show, .sp-hide {}
+
+@media (min-width: 768px) {
+/* PC用 */
+	.sp-show { display:none !important;}
+}
+@media (max-width: 767px) {
+/* tablet用 */
+	.sp-hide { display:none !important;}
+}
+
+
+/* container */
+@media (min-width: 768px) {
+/* PC用 */
+body { background:#ffffff;}
+.wrapper { clear:both; width:1000px; margin:0 auto; position:relative;}
+header .wrapper, footer .wrapper { position:relative;}
+}
+@media (max-width: 767px) {
+/* tablet用 */
+.wrapper { clear:both; width:94%; margin:0 3%; position:relative; overflow:hidden;}
+}
+
+
+/* .header 
+-------------------------------------------------- */
+.header { text-align:center; background:#000;}
+.header .sub { height:25px; background:#d3ced1;}
+
+@media (min-width: 768px) {
+/* PC用 */
+	.header .sub .view_site { float:right;}
+	.header .sub p { text-align:left; font-size:11px; line-height:25px; color:#747474;}
+}
+
+@media (max-width: 767px) {
+/* tablet用 */
+}
+
+/* footer
+-------------------------------------------------- */
+.footer { margin:50px 0 0; padding:30px 0 50px; border-top:5px solid #000;}
+.footer p { text-align:center; font-size:20px;}
+.footer p a { text-decoration:underline;}
+.footer p a:hover {
+	color: #333;
+	text-decoration:none;
+}
+
+
+/* login_index
+-------------------------------------------------- */
+.login_menu { margin:105px 0 200px 410px; font-size:24px;}
+.login_menu li { font-size:24px; line-height:2;}
+.login_menu li:first-child { margin-bottom:1em;}
+
+
+/* talent_list
+-------------------------------------------------- */
+article { padding:53px 0 60px;}
+article h2 { margin-bottom:42px; font-size:24px; text-align:center;}
+
+article * { box-sizing: border-box;}
+
+.talent_list { width:100%; margin-bottom:45px;}
+.talent_list th, 
+.talent_list td { padding:0.8em 1em; vertical-align:middle; text-align:center; border:1px solid #000;}
+
+.talent_list th { background:#d9d9d9;}
+.talent_list td { background:#eeeeee;}
+.talent_list tr:nth-child(even) td { background:#fff;}
+
+.talent_list a { color:#e4157e; text-decoration:underline;}
+.talent_list a:hover { text-decoration:none;}
+
+.btn_add { margin-bottom:20px; text-align:center;}
+
+.dl { margin:0 auto; border:1px solid #000;}
+.dl th, .dl td { padding:0.8em 1em; vertical-align:middle; text-align:center;}
+.dl th { background:#eeeeee; border-right:1px solid #a2a2a2;}
+.dl td input { padding:3px 1.5em;}
+
+
+/* input_datail
+-------------------------------------------------- */
+.input_detail { width:100%; margin-bottom:45px; border:1px solid #000;}
+
+.input_detail th, .input_detail td { padding:0.8em 1em; vertical-align:middle; border-bottom:1px solid #000;}
+	/*.input_detail .bon th, .input_detail .bon td { border-bottom:1px solid #000;}*/
+	
+.input_detail th { width:270px; border-right:1px solid #000; background:#eeeeee; text-align:right;}
+.input_detail th span { margin-right:8px; vertical-align:top; font-size:10px; color:#e4157e;}
+
+.input_detail input, 
+.input_detail textarea { padding:3px; line-height:1.7;}
+.wide { width:594px; }
+
+
+.input_detail select { padding:3px; line-height:1.7;}
+
+
+/* voice sample input
+-------------------------------------------------- */
+.voice_inner { margin:0 20%; padding-bottom:30px;}
+.voice_inner h3 { margin-bottom:30px; padding:0.5em 0.5em; font-size:20px; background:#eeeeee;}
+.voice_inner h4 { margin-bottom:12px; padding:0 0 0 ; font-size:20px;}
+.voice_inner h4:before { content:'▶ '; font-size:16px;}
+
+.voice_inner ol { margin-bottom:20px;}
+.voice_inner ol li { list-style:decimal inside;}
+
+.voice_inner li input { width:70%; margin:12px; padding:3px;}
+
+
+/* result_inner
+-------------------------------------------------- */
+.result_inner { margin:0 5%; padding-bottom:30px;}
+.result_inner h3 { margin-bottom:30px; padding:0.5em 0.5em; font-size:20px; background:#eeeeee;}
+.result_inner .sub_ttl { margin-bottom:10px;}
+.result_inner .sub_ttl input { width:40%;}
+.result_inner input { padding:3px;}
+
+.result_inner table { width:100%; margin-bottom:45px;}
+.result_inner th, 
+.result_inner td { padding:0.5em 0.5em; vertical-align:middle; text-align:center; border:1px solid #000;}
+.result_inner th { background:#d9d9d9;}
+.result_inner td { text-align:center;}
+
+#sortable .block:hover { cursor: move;}
+
+
+
