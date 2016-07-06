@@ -15,7 +15,9 @@
 
     <p class="btn_add">
         <a href="/administrators/<%= @administrator.id %>/edit"><img src="/img/btn_edit.png" alt="編集"></a>
-        <a data-confirm="削除したデータは完全に消去されます\n\n削除しますか？" rel="nofollow" data-method="delete" href="/administrators/6">
+        <a data-confirm="削除したデータは完全に消去されます
+
+削除しますか？" rel="nofollow" data-method="delete" href="/administrators/<%= @administrator.id %>">
         <img src="/img/btn_del.png" alt="削除">
         </a>
 
