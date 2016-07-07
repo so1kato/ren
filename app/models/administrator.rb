@@ -16,14 +16,23 @@ class Administrator < ActiveRecord::Base
 
   before_save do
     if self.password.present?
-      self.password = self.crypt_password(self.password)
+      self.password = Administrator.crypt_password(self.password)
     else
       self.password = self.password_was
     end
   end
 
-  def crypt_password(password)
-    Digest::MD5.hexdigest(password + SALT)
+  def self.authenticate(email, password)
+    user = find_by(email: email)
+    if user != nil && user.password == self.crypt_password(password) then
+      user
+    else
+      return
+    end
+  end
+
+  def self.crypt_password(password)
+    Digest::SHA1.hexdigest(SALT + password)
   end
 
 end
