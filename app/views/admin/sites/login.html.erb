@@ -1,0 +1,18 @@
+    <p id="error"><%= @error %></p>
+
+    <h2>ログイン画面</h2>
+
+    <%= form_tag action: :auth do %>
+      <table width="0" border="0" cellspacing="0" cellpadding="0" class="input_detail">
+          <tr>
+              <th scope="row">メールアドレス</th>
+              <td><%= text_field_tag :email, '', size: 50 %></td>
+          </tr>
+          <tr>
+              <th scope="row">パスワード</th>
+              <td><%= password_field_tag :password, '', size: 50 %></td>
+          </tr>
+      </table>
+      <%= hidden_field_tag :referer, flash[:referer] %>
+      <%= submit_tag 'ログイン' %>
+    <% end %>

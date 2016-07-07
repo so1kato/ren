@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    root 'sites#index'
+
+    resources :administrators
+    resources :talents
+
+    get 'sites' => 'sites#index'
+    get 'sites/login/' => 'sites#login'
+    get 'sites/logout/' => 'sites#logout'
+    post 'sites/auth/' => 'sites#auth'
+  end
+
   root 'sites#index'
 
   resources :administrators
