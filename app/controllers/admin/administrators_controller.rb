@@ -28,7 +28,7 @@ class Admin::AdministratorsController < ApplicationController
 
     respond_to do |format|
       if @administrator.save
-        format.html { redirect_to @administrator, notice: 'データを登録しました。' }
+        format.html { redirect_to [:admin, @administrator], notice: 'データを登録しました。' }
         format.json { render :show, status: :created, location: @administrator }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Admin::AdministratorsController < ApplicationController
   def update
     respond_to do |format|
       if @administrator.update(administrator_params)
-        format.html { redirect_to @administrator, notice: 'データを登録しました。' }
+        format.html { redirect_to [:admin, @administrator], notice: 'データを登録しました。' }
         format.json { render :show, status: :ok, location: @administrator }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Admin::AdministratorsController < ApplicationController
   def destroy
     @administrator.destroy
     respond_to do |format|
-      format.html { redirect_to administrators_url, notice: 'データを削除しました。' }
+      format.html { redirect_to admin_administrators_url, notice: 'データを削除しました。' }
       format.json { head :no_content }
     end
   end

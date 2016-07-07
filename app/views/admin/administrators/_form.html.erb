@@ -1,5 +1,5 @@
 
-    <%= form_for(@administrator) do |f| %>
+    <%= form_for([:admin, @administrator]) do |f| %>
         <% if @administrator.errors.any? %>
 <!--
         <div id="error_explanation"><h2>入力エラー</h2></div>

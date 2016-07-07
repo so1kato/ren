@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     post 'sites/auth/' => 'sites#auth'
   end
 
+=begin
   root 'sites#index'
 
   resources :administrators
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   get 'sites/login/' => 'sites#login'
   get 'sites/logout/' => 'sites#logout'
   post 'sites/auth/' => 'sites#auth'
+=end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -16,7 +16,7 @@ class Admin::SitesController < ApplicationController
       if params[:referer] != nil then
         redirect_to params[:referer]
       else
-        redirect_to '/'
+        redirect_to ''
       end
     else
       flash.now[:referer] = params[:referer]
@@ -27,6 +27,6 @@ class Admin::SitesController < ApplicationController
 
   def logout
     reset_session
-    redirect_to '/'
+    redirect_to '/admin'
   end
 end

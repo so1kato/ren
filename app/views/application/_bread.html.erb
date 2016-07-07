@@ -1,13 +1,13 @@
     <p class="crumb">
 <% if session[:admin_id].nil? %>
-      <a href="/sites/login">[ログイン]</a>　
+      <a href="/admin/sites/login">[ログイン]</a>　
 <% else %>
-      <a href="/sites/logout"><%= session[:admin_name] %> [ログアウト]</a>　
+      <a href="/admin/sites/logout"><%= session[:admin_name] %> [ログアウト]</a>　
 <% end %>
-      <a href="/">管理画面TOP</a>
+      <a href="/admin/">管理画面TOP</a>
 <% if !@parent.nil? %>
   <% @parent.each do |href, page| %>
-> <a href="<%= href %>"><%= page %></a>
+> <a href="/admin<%= href %>"><%= page %></a>
   <% end %>
 <% end %>
 
