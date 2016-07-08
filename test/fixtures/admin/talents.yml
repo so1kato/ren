@@ -1,0 +1,75 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  code: MyString
+  name_kana: MyString
+  name_eng: MyString
+  category_id: 1
+  birth_month: 1
+  birth_day: 1
+  prefecture_id: 1
+  hometown: MyString
+  hobby: MyText
+  url_hp: MyString
+  url_blog: MyString
+  url_tw: MyString
+  url_fb: MyString
+  url_ins: MyString
+  masterpiece: MyText
+  voice_mix: MyString
+  voice_line_1: MyString
+  voice_line_2: MyString
+  voice_line_3: MyString
+  voice_line_4: MyString
+  voice_narration_1: MyString
+  voice_narration_2: MyString
+  voice_narration_3: MyString
+  voice_narration_4: MyString
+  voice_talk_1: MyString
+  voice_talk_2: MyString
+  voice_talk_3: MyString
+  voice_talk_4: MyString
+  voice_other_1: MyString
+  voice_other_2: MyString
+  voice_other_3: MyString
+  voice_other_4: MyString
+  display_flg: false
+  deleted: 2016-07-08 13:35:27
+
+two:
+  name: MyString
+  code: MyString
+  name_kana: MyString
+  name_eng: MyString
+  category_id: 1
+  birth_month: 1
+  birth_day: 1
+  prefecture_id: 1
+  hometown: MyString
+  hobby: MyText
+  url_hp: MyString
+  url_blog: MyString
+  url_tw: MyString
+  url_fb: MyString
+  url_ins: MyString
+  masterpiece: MyText
+  voice_mix: MyString
+  voice_line_1: MyString
+  voice_line_2: MyString
+  voice_line_3: MyString
+  voice_line_4: MyString
+  voice_narration_1: MyString
+  voice_narration_2: MyString
+  voice_narration_3: MyString
+  voice_narration_4: MyString
+  voice_talk_1: MyString
+  voice_talk_2: MyString
+  voice_talk_3: MyString
+  voice_talk_4: MyString
+  voice_other_1: MyString
+  voice_other_2: MyString
+  voice_other_3: MyString
+  voice_other_4: MyString
+  display_flg: false
+  deleted: 2016-07-08 13:35:27

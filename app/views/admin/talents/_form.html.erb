@@ -1,0 +1,157 @@
+<%= form_for([:admin, @talent]) do |f| %>
+  <% if @talent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@talent.errors.count, "error") %> prohibited this talent from being saved:</h2>
+
+      <ul>
+      <% @talent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :name_kana %><br>
+    <%= f.text_field :name_kana %>
+  </div>
+  <div class="field">
+    <%= f.label :name_eng %><br>
+    <%= f.text_field :name_eng %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :birth_month %><br>
+    <%= f.number_field :birth_month %>
+  </div>
+  <div class="field">
+    <%= f.label :birth_day %><br>
+    <%= f.number_field :birth_day %>
+  </div>
+  <div class="field">
+    <%= f.label :prefecture_id %><br>
+    <%= f.number_field :prefecture_id %>
+  </div>
+  <div class="field">
+    <%= f.label :hometown %><br>
+    <%= f.text_field :hometown %>
+  </div>
+  <div class="field">
+    <%= f.label :hobby %><br>
+    <%= f.text_area :hobby %>
+  </div>
+  <div class="field">
+    <%= f.label :url_hp %><br>
+    <%= f.text_field :url_hp %>
+  </div>
+  <div class="field">
+    <%= f.label :url_blog %><br>
+    <%= f.text_field :url_blog %>
+  </div>
+  <div class="field">
+    <%= f.label :url_tw %><br>
+    <%= f.text_field :url_tw %>
+  </div>
+  <div class="field">
+    <%= f.label :url_fb %><br>
+    <%= f.text_field :url_fb %>
+  </div>
+  <div class="field">
+    <%= f.label :url_ins %><br>
+    <%= f.text_field :url_ins %>
+  </div>
+  <div class="field">
+    <%= f.label :masterpiece %><br>
+    <%= f.text_area :masterpiece %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_mix %><br>
+    <%= f.text_field :voice_mix %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_line_1 %><br>
+    <%= f.text_field :voice_line_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_line_2 %><br>
+    <%= f.text_field :voice_line_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_line_3 %><br>
+    <%= f.text_field :voice_line_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_line_4 %><br>
+    <%= f.text_field :voice_line_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_narration_1 %><br>
+    <%= f.text_field :voice_narration_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_narration_2 %><br>
+    <%= f.text_field :voice_narration_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_narration_3 %><br>
+    <%= f.text_field :voice_narration_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_narration_4 %><br>
+    <%= f.text_field :voice_narration_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_talk_1 %><br>
+    <%= f.text_field :voice_talk_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_talk_2 %><br>
+    <%= f.text_field :voice_talk_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_talk_3 %><br>
+    <%= f.text_field :voice_talk_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_talk_4 %><br>
+    <%= f.text_field :voice_talk_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_other_1 %><br>
+    <%= f.text_field :voice_other_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_other_2 %><br>
+    <%= f.text_field :voice_other_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_other_3 %><br>
+    <%= f.text_field :voice_other_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :voice_other_4 %><br>
+    <%= f.text_field :voice_other_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :display_flg %><br>
+    <%= f.check_box :display_flg %>
+  </div>
+  <div class="field">
+    <%= f.label :deleted %><br>
+    <%= f.datetime_select :deleted %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

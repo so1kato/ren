@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Admin Talents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Name kana</th>
+      <th>Name eng</th>
+      <th>Category</th>
+      <th>Birth month</th>
+      <th>Birth day</th>
+      <th>Prefecture</th>
+      <th>Hometown</th>
+      <th>Hobby</th>
+      <th>Url hp</th>
+      <th>Url blog</th>
+      <th>Url tw</th>
+      <th>Url fb</th>
+      <th>Url ins</th>
+      <th>Masterpiece</th>
+      <th>Voice mix</th>
+      <th>Voice line 1</th>
+      <th>Voice line 2</th>
+      <th>Voice line 3</th>
+      <th>Voice line 4</th>
+      <th>Voice narration 1</th>
+      <th>Voice narration 2</th>
+      <th>Voice narration 3</th>
+      <th>Voice narration 4</th>
+      <th>Voice talk 1</th>
+      <th>Voice talk 2</th>
+      <th>Voice talk 3</th>
+      <th>Voice talk 4</th>
+      <th>Voice other 1</th>
+      <th>Voice other 2</th>
+      <th>Voice other 3</th>
+      <th>Voice other 4</th>
+      <th>Display flg</th>
+      <th>Deleted</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @talents.each do |talent| %>
+      <tr>
+        <td><%= talent.name %></td>
+        <td><%= talent.code %></td>
+        <td><%= talent.name_kana %></td>
+        <td><%= talent.name_eng %></td>
+        <td><%= talent.category_id %></td>
+        <td><%= talent.birth_month %></td>
+        <td><%= talent.birth_day %></td>
+        <td><%= talent.prefecture_id %></td>
+        <td><%= talent.hometown %></td>
+        <td><%= talent.hobby %></td>
+        <td><%= talent.url_hp %></td>
+        <td><%= talent.url_blog %></td>
+        <td><%= talent.url_tw %></td>
+        <td><%= talent.url_fb %></td>
+        <td><%= talent.url_ins %></td>
+        <td><%= talent.masterpiece %></td>
+        <td><%= talent.voice_mix %></td>
+        <td><%= talent.voice_line_1 %></td>
+        <td><%= talent.voice_line_2 %></td>
+        <td><%= talent.voice_line_3 %></td>
+        <td><%= talent.voice_line_4 %></td>
+        <td><%= talent.voice_narration_1 %></td>
+        <td><%= talent.voice_narration_2 %></td>
+        <td><%= talent.voice_narration_3 %></td>
+        <td><%= talent.voice_narration_4 %></td>
+        <td><%= talent.voice_talk_1 %></td>
+        <td><%= talent.voice_talk_2 %></td>
+        <td><%= talent.voice_talk_3 %></td>
+        <td><%= talent.voice_talk_4 %></td>
+        <td><%= talent.voice_other_1 %></td>
+        <td><%= talent.voice_other_2 %></td>
+        <td><%= talent.voice_other_3 %></td>
+        <td><%= talent.voice_other_4 %></td>
+        <td><%= talent.display_flg %></td>
+        <td><%= talent.deleted %></td>
+        <td><%= link_to 'Show', [:admin, talent] %></td>
+        <td><%= link_to 'Edit', edit_admin_talent_path(talent) %></td>
+        <td><%= link_to 'Destroy', [:admin, talent], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Talent', new_admin_talent_path %>
