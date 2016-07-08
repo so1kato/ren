@@ -28,7 +28,7 @@ class Admin::TalentsController < ApplicationController
 
     respond_to do |format|
       if @talent.save
-        format.html { redirect_to [:admin, @talent], notice: 'Talent was successfully created.' }
+        format.html { redirect_to [:admin, @talent], notice: 'データを登録しました。' }
         format.json { render :show, status: :created, location: @talent }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Admin::TalentsController < ApplicationController
   def update
     respond_to do |format|
       if @talent.update(talent_params)
-        format.html { redirect_to [:admin, @talent], notice: 'Talent was successfully updated.' }
+        format.html { redirect_to [:admin, @talent], notice: 'データを登録しました。' }
         format.json { render :show, status: :ok, location: @talent }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Admin::TalentsController < ApplicationController
   def destroy
     @talent.destroy
     respond_to do |format|
-      format.html { redirect_to admin_talents_url, notice: 'Talent was successfully destroyed.' }
+      format.html { redirect_to admin_talents_url, notice: 'データを削除しました。' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class Admin::TalentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def talent_params
-      params.require(:talent).permit(:name, :code, :name_kana, :name_eng, :category_id, :birth_month, :birth_day, :prefecture_id, :hometown, :hobby, :url_hp, :url_blog, :url_tw, :url_fb, :url_ins, :masterpiece, :voice_mix, :voice_line_1, :voice_line_2, :voice_line_3, :voice_line_4, :voice_narration_1, :voice_narration_2, :voice_narration_3, :voice_narration_4, :voice_talk_1, :voice_talk_2, :voice_talk_3, :voice_talk_4, :voice_other_1, :voice_other_2, :voice_other_3, :voice_other_4, :display_flg, :deleted)
+      params.require(:talent).permit(:name, :code, :name_kana, :name_eng, :category_id, :birth_month, :birth_day, :prefecture_id, :hometown, :hobby, :url_hp, :url_blog, :url_tw, :url_fb, :url_ins, :masterpiece, :display_flg)
     end
 end

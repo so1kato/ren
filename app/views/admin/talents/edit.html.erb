@@ -1,6 +1,7 @@
-<h1>Editing Admin Talent</h1>
+<% @parent = {"/talents" => "タレント一覧"} %>
+<% @mypage = "プロフィール管理" %>
+<p id="notice"><%= notice %></p>
+
+    <h2><%= @mypage %></h2>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', [:admin, @talent] %> |
-<%= link_to 'Back', admin_talents_path %>

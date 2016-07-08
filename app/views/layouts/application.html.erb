@@ -9,9 +9,9 @@
         <meta name="Description" content="#">
 
         <link href="/favicon.ico" type="image/x-icon" rel="icon"/><link href="/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
-        <link rel="stylesheet" href="/css/import.css"/>
-        <script src="/js/jquery-1.9.1.min.js"></script>
-        <script src="/js/jquery-ui.js"></script>
+        <link rel="stylesheet" href="/admin/css/import.css"/>
+        <script src="/admin/js/jquery-1.9.1.min.js"></script>
+        <script src="/admin/js/jquery-ui.js"></script>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -20,10 +20,10 @@
 <body>
 
 <header class="header">
-    <h1><a href="/admin/"><img src="/img/logo_01.png" alt="タレント管理画面"></a></h1>
+    <h1><a href="/admin/"><img src="/admin/img/logo_01.png" alt="タレント管理画面"></a></h1>
     <div class="sub">
     <div class="wrapper">
-        <div class="view_site"><a href="/talent/" target="_blank"><img src="/img/btn_01.png" alt="WEBページ確認"></a></div>
+        <div class="view_site"><a href="/talent/" target="_blank"><img src="/admin/img/btn_01.png" alt="WEBページ確認"></a></div>
                 <p class="crumb"><%= render 'bread', {mypage: @mypage, parent: @parent} %></p>
     </div><!--/wrapper-->
     </div><!--/sub-->

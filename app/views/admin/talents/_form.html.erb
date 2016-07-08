@@ -1,157 +1,160 @@
-<%= form_for([:admin, @talent]) do |f| %>
-  <% if @talent.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@talent.errors.count, "error") %> prohibited this talent from being saved:</h2>
 
-      <ul>
-      <% @talent.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= form_for([:admin, @talent]) do |f| %>
+        <% if @talent.errors.any? %>
+<!--
+        <div id="error_explanation"><h2>入力エラー</h2></div>
+-->
+    <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :code %><br>
-    <%= f.text_field :code %>
-  </div>
-  <div class="field">
-    <%= f.label :name_kana %><br>
-    <%= f.text_field :name_kana %>
-  </div>
-  <div class="field">
-    <%= f.label :name_eng %><br>
-    <%= f.text_field :name_eng %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :birth_month %><br>
-    <%= f.number_field :birth_month %>
-  </div>
-  <div class="field">
-    <%= f.label :birth_day %><br>
-    <%= f.number_field :birth_day %>
-  </div>
-  <div class="field">
-    <%= f.label :prefecture_id %><br>
-    <%= f.number_field :prefecture_id %>
-  </div>
-  <div class="field">
-    <%= f.label :hometown %><br>
-    <%= f.text_field :hometown %>
-  </div>
-  <div class="field">
-    <%= f.label :hobby %><br>
-    <%= f.text_area :hobby %>
-  </div>
-  <div class="field">
-    <%= f.label :url_hp %><br>
-    <%= f.text_field :url_hp %>
-  </div>
-  <div class="field">
-    <%= f.label :url_blog %><br>
-    <%= f.text_field :url_blog %>
-  </div>
-  <div class="field">
-    <%= f.label :url_tw %><br>
-    <%= f.text_field :url_tw %>
-  </div>
-  <div class="field">
-    <%= f.label :url_fb %><br>
-    <%= f.text_field :url_fb %>
-  </div>
-  <div class="field">
-    <%= f.label :url_ins %><br>
-    <%= f.text_field :url_ins %>
-  </div>
-  <div class="field">
-    <%= f.label :masterpiece %><br>
-    <%= f.text_area :masterpiece %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_mix %><br>
-    <%= f.text_field :voice_mix %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_line_1 %><br>
-    <%= f.text_field :voice_line_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_line_2 %><br>
-    <%= f.text_field :voice_line_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_line_3 %><br>
-    <%= f.text_field :voice_line_3 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_line_4 %><br>
-    <%= f.text_field :voice_line_4 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_narration_1 %><br>
-    <%= f.text_field :voice_narration_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_narration_2 %><br>
-    <%= f.text_field :voice_narration_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_narration_3 %><br>
-    <%= f.text_field :voice_narration_3 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_narration_4 %><br>
-    <%= f.text_field :voice_narration_4 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_talk_1 %><br>
-    <%= f.text_field :voice_talk_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_talk_2 %><br>
-    <%= f.text_field :voice_talk_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_talk_3 %><br>
-    <%= f.text_field :voice_talk_3 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_talk_4 %><br>
-    <%= f.text_field :voice_talk_4 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_other_1 %><br>
-    <%= f.text_field :voice_other_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_other_2 %><br>
-    <%= f.text_field :voice_other_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_other_3 %><br>
-    <%= f.text_field :voice_other_3 %>
-  </div>
-  <div class="field">
-    <%= f.label :voice_other_4 %><br>
-    <%= f.text_field :voice_other_4 %>
-  </div>
-  <div class="field">
-    <%= f.label :display_flg %><br>
-    <%= f.check_box :display_flg %>
-  </div>
-  <div class="field">
-    <%= f.label :deleted %><br>
-    <%= f.datetime_select :deleted %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <table width="0" border="0" cellspacing="0" cellpadding="0" class="input_detail">
+        <tr>
+            <th scope="row"><span>※</span>表示・非表示</th>
+            <td>
+                <div class="input radio">
+                    <input type="hidden" name="display_flg" value=""/>
+                    <label for="display-flg-1"><%= f.radio_button :display_flg, true, id: 'display-flg-1' %> 表示 </label>
+                    <label for="display-flg-0"><%= f.radio_button :display_flg, false, id: 'display-flg-0' %> 非表示 </label>
+                </div>
+                <% @talent.errors.messages[:display_flg].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><span>※</span>カテゴリ</th>
+            <td>
+                <%= f.text_field :category_id, size: 50, id: 'category-id', class: 'wide' %>
+                <% @talent.errors.messages[:category_id].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><span>※</span>タレントID</th>
+            <td>
+                <div class="input text"><%= f.text_field :code, size: 50, id: 'code', class: 'wide' %></div>
+                <% @talent.errors.messages[:code].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><span>※</span>名前（漢字）</th>
+            <td>
+                <div class="input text"><%= f.text_field :name, size: 50, id: 'name', class: 'wide' %></div>
+                <% @talent.errors.messages[:name].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><span>※</span>名前（ふりがな）</th>
+            <td>
+                <div class="input text"><%= f.text_field :name_kana, size: 50, id: 'name_kana', class: 'wide' %></div>
+                <% @talent.errors.messages[:name_kana].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><span>※</span>名前（English）</th>
+            <td>
+                <div class="input text"><%= f.text_field :name_eng, size: 50, id: 'name_eng', class: 'wide' %></div>
+                <% @talent.errors.messages[:name_eng].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><span>※</span>誕生日</th>
+            <td>
+                <%= select_month @talent.birth_month, {use_month_numbers: true, include_blank: true}, {name: 'talent[birth_month]', id: "birth-month"} %>
+                <label for="birth_month">月</label>
+                <%= select_day @talent.birth_day, {include_blank: true}, {name: 'talent[birth_day]', id: "birth-day"} %>
+                <label for="birth_day">日</label>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><span>※</span>出身地</th>
+            <td>
+                <%= f.text_field :prefecture_id, size: 50, id: 'prefecture_id', class: 'wide' %>
+                <% @talent.errors.messages[:prefecture_id].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">出身地（その他）</th>
+            <td>
+                <div class="input text"><%= f.text_field :hometown, size: 50, id: 'hometown', class: 'wide' %></div>
+                <% @talent.errors.messages[:hometown].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">特技・趣味</th>
+            <td>
+                <div class="input textarea"><%= f.text_area :hobby, cols: 45, rows: 6, id: 'hobby', class: 'wide' %></div>
+                <% @talent.errors.messages[:hobby].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">SNS（ホームページ）</th>
+            <td>
+                <div class="input text"><%= f.text_field :url_hp, size: 50, id: 'url_hp', class: 'wide' %></div>
+                <% @talent.errors.messages[:url_hp].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">SNS（Blog）</th>
+            <td>
+                <div class="input text"><%= f.text_field :url_blog, size: 50, id: 'url_blog', class: 'wide' %></div>
+                <% @talent.errors.messages[:url_blog].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">SNS（Twitter）</th>
+            <td>
+                <div class="input text"><%= f.text_field :url_tw, size: 50, id: 'url_tw', class: 'wide' %></div>
+                <% @talent.errors.messages[:url_tw].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">SNS（Facebook）</th>
+            <td>
+                <div class="input text"><%= f.text_field :url_fb, size: 50, id: 'url_fb', class: 'wide' %></div>
+                <% @talent.errors.messages[:url_fb].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">SNS（Instagram）</th>
+            <td>
+                <div class="input text"><%= f.text_field :url_ins, size: 50, id: 'url_ins', class: 'wide' %></div>
+                <% @talent.errors.messages[:url_ins].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+<%
+=begin
+%>
+        <tr>
+            <th scope="row"><span>※</span>写真1</th>
+            <td>
+                <div class="input file"><%= f.text_field :image1, size: 50, id: 'image1', class: 'wide' %></div>
+                <% @talent.errors.messages[:image1].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">写真２</th>
+            <td>
+                <div class="input file"><%= f.text_field :image2, size: 50, id: 'image2', class: 'wide' %></div>
+                <% @talent.errors.messages[:image2].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">PDF</th>
+            <td>
+                <div class="input file"><%= f.text_field :pdf, size: 50, id: 'pdf', class: 'wide' %></div>
+                <% @talent.errors.messages[:pdf].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+<%
+=end
+%>
+        <tr>
+            <th scope="row">代表作</th>
+            <td>
+                <div class="input textarea"><%= f.text_area :masterpiece, cols: 45, rows: 6, id: 'masterpiece', class: 'wide' %></div>
+                <% @talent.errors.messages[:masterpiece].each do |message| %><p class="error"><%= message %></p><% end %>
+            </td>
+        </tr>
+    </table>
+    <p class="btn_add">
+        <input name="save" type="image" src="/admin/img/btn_reg.png" alt="登録">
+    </p>
+    </form>
+    <% end %>
