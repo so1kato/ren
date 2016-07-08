@@ -21,7 +21,7 @@
         <tr>
             <th scope="row"><span>※</span>カテゴリ</th>
             <td>
-                <%= f.text_field :category_id, size: 50, id: 'category-id', class: 'wide' %>
+                <%= f.select :category_id, @category_list.invert, {id: 'category-id', include_blank: ''} %>
                 <% @talent.errors.messages[:category_id].each do |message| %><p class="error"><%= message %></p><% end %>
             </td>
         </tr>
@@ -65,7 +65,7 @@
         <tr>
             <th scope="row"><span>※</span>出身地</th>
             <td>
-                <%= f.text_field :prefecture_id, size: 50, id: 'prefecture_id', class: 'wide' %>
+                <%= f.select :prefecture_id, @prefecture_list.invert, {id: 'prefecture_id-id', include_blank: ''} %>
                 <% @talent.errors.messages[:prefecture_id].each do |message| %><p class="error"><%= message %></p><% end %>
             </td>
         </tr>

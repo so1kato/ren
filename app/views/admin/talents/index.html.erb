@@ -28,11 +28,11 @@
               </td>
               <td><%= talent.code %></td>
               <td class="align-l"><%= talent.name %></td>
-              <td class="align-l"><%= talent.category_id %></td>
+              <td class="align-l"><%= @category_list[talent.category_id] %></td>
               <td><%= link_to 'プロフィール管理', [:admin, talent] %></td>
               <td><%= link_to 'ボイスサンプル管理', [:admin, talent] %></td>
               <td><%= link_to '実績管理', [:admin, talent] %></td>
-              <td><%= talent.display_flg %></td>
+              <td><%= @display_list[talent.display_flg] %></td>
               <td>
                   <%= link_to raw('<img src="/admin/img/btn_delete.png">'), [:admin, talent], method: :delete, data: { confirm: '削除したデータは完全に消去されます\n\n削除しますか？' } %>
               </td>

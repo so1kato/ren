@@ -8,11 +8,11 @@
     <table width="0" border="0" cellspacing="0" cellpadding="0" class="input_detail">
         <tr>
             <th scope="row">表示・非表示</th>
-            <td><%= @talent.display_flg %></td>
+            <td><%= @display_list[@talent.display_flg] %></td>
         </tr>
         <tr>
             <th scope="row">カテゴリ</th>
-            <td><%= @talent.category_id %></td>
+            <td><%= @category_list[@talent.category_id] %></td>
         </tr>
         <tr>
             <th scope="row">タレントID</th>
@@ -36,7 +36,7 @@
         </tr>
         <tr>
             <th scope="row">出身地</th>
-            <td><%= @talent.prefecture_id %></td>
+            <td><%= @prefecture_list[@talent.prefecture_id] %></td>
         </tr>
         <tr>
             <th scope="row">出身地（その他）</th>
