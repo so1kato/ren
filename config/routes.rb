@@ -3,13 +3,19 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'sites#index'
 
-    resources :administrators
-    resources :talents
-  
+    get 'talents/female/' => 'talents#female'
+    get 'talents/male/' => 'talents#male'
+    get 'talents/girl/' => 'talents#girl'
+    get 'talents/boy/' => 'talents#boy'
+    get 'talents/memoriam/' => 'talents#memoriam'
+
     get 'sites' => 'sites#index'
     get 'sites/login/' => 'sites#login'
     get 'sites/logout/' => 'sites#logout'
     post 'sites/auth/' => 'sites#auth'
+
+    resources :administrators
+    resources :talents
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

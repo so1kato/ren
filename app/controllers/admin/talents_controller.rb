@@ -5,7 +5,28 @@ class Admin::TalentsController < ApplicationController
   # GET /admin/talents
   # GET /admin/talents.json
   def index
+    @mypage = "タレント一覧"
     @talents = Talent.all
+  end
+
+  def female
+    category_list 1
+  end
+
+  def male
+    category_list 2
+  end
+
+  def girl
+    category_list 3
+  end
+
+  def boy
+    category_list 4
+  end
+
+  def memoriam
+    category_list 5
   end
 
   # GET /admin/talents/1
@@ -77,5 +98,11 @@ class Admin::TalentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def talent_params
       params.require(:talent).permit(:name, :code, :name_kana, :name_eng, :category_id, :birth_month, :birth_day, :prefecture_id, :hometown, :hobby, :url_hp, :url_blog, :url_tw, :url_fb, :url_ins, :masterpiece, :display_flg)
+    end
+
+    def category_list (category_id)
+      @mypage = @category_list[category_id] + "一覧"
+      @talents = Talent.where('category_id = ' + category_id.to_s)
+      render 'index'
     end
 end

@@ -2,11 +2,11 @@
 
     <ul class="login_menu">
         <li>＞ <%= link_to 'すべて表示',  { :controller => :talents, :action => :index} %></li>
-        <li>＞ <%= link_to '女性タレント',  { :controller => :administrators, :action => :index} %></li>
-        <li>＞ <%= link_to '男性タレント',  { :controller => :administrators, :action => :index} %></li>
-        <li>＞ <%= link_to '女性ジュニア',  { :controller => :administrators, :action => :index} %></li>
-        <li>＞ <%= link_to '男性ジュニア',  { :controller => :administrators, :action => :index} %></li>
-        <li>＞ <%= link_to 'Memoriam',  { :controller => :administrators, :action => :index} %></li>
+        <li>＞ <%= link_to '女性タレント',  { :controller => :talents, :action => :female} %></li>
+        <li>＞ <%= link_to '男性タレント',  { :controller => :talents, :action => :male} %></li>
+        <li>＞ <%= link_to '女性ジュニア',  { :controller => :talents, :action => :girl} %></li>
+        <li>＞ <%= link_to '男性ジュニア',  { :controller => :talents, :action => :boy} %></li>
+        <li>＞ <%= link_to 'Memoriam',  { :controller => :talents, :action => :memoriam} %></li>
         <br>
         <li>＞ <%= link_to '管理者一覧',  { :controller => :administrators, :action => :index} %></li>
     </ul>

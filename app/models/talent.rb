@@ -1,8 +1,5 @@
 class Talent < ActiveRecord::Base
 
-  validates :display_flg,
-    presence: { message: '表示・非表示を選択しください'}
-
   validates :category_id,
     presence: { message: 'カテゴリを選択しください'}
 
