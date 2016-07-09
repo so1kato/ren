@@ -18,5 +18,4 @@
         <% end %>
     </table>
 
-    <p class="btn_add"><a href="/admin/administrators/new"><img src="/admin/img/btn_new.png" alt="新規追加"></a></p>
-    <%= link_to '新規登録', new_admin_administrator_path %>
+    <p class="btn_add"><%= link_to raw('<img src="/admin/img/btn_new.png" alt="新規追加">'), new_admin_administrator_path %></p>
