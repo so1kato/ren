@@ -3,6 +3,7 @@
         <% if @talent.errors.any? %>
 <!--
         <div id="error_explanation"><h2>入力エラー</h2></div>
+            <% @talent.errors.messages.each do |message| %><p class="error"><%= message %></p><% end %>
 -->
         <% end %>
 
@@ -11,8 +12,7 @@
             <th scope="row"><span>※</span>表示・非表示</th>
             <td>
                 <div class="input radio">
-                    <input type="hidden" name="display_flg" value=""/>
-                    <label for="display-flg-1"><%= f.radio_button :display_flg, true, id: 'display-flg-1' %> 表示 </label>
+                    <label for="display-flg-1"><%= f.radio_button :display_flg, true, {:checked => true, 'id' => 'display-flg-0'} %> 表示 </label>
                     <label for="display-flg-0"><%= f.radio_button :display_flg, false, id: 'display-flg-0' %> 非表示 </label>
                 </div>
                 <% @talent.errors.messages[:display_flg].each do |message| %><p class="error"><%= message %></p><% end %>
@@ -60,6 +60,14 @@
                 <label for="birth_month">月</label>
                 <%= select_day @talent.birth_day, {include_blank: true}, {name: 'talent[birth_day]', id: "birth-day"} %>
                 <label for="birth_day">日</label>
+                  <% if @talent.errors.any? %>
+                    <% if @talent.errors.messages.has_key?(:birth_month) %>
+                      <% @talent.errors.messages[:birth_month].each do |message| %><p class="error"><%= message %></p><% end %>
+                    <% end %>
+                    <% if @talent.errors.messages.has_key?(:birth_day) %>
+                      <% @talent.errors.messages[:birth_day].each do |message| %><p class="error"><%= message %></p><% end %>
+                    <% end %>
+                  <% end %>
             </td>
         </tr>
         <tr>
