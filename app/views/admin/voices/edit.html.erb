@@ -1,0 +1,51 @@
+<% @parent = {"/talents" => "タレント一覧", "/talents/" + @talent.id.to_s => @talent.name} %>
+<% @mypage = "ボイスサンプル管理 - 入力" %>
+
+<p id="notice"><%= notice %></p>
+
+    <h2><%= @mypage %></h2>
+
+    <div class="voice_inner">
+        <h3 class="talent_name"><%= @talent.name %></h3>
+
+        <%= form_for @talent, :url => {:action => 'update'} do |f| %>
+        <h4>MIX SAMPLE</h4>
+        <ol>
+            <li><%= f.text_field :voice_mix, size: 50, id: 'voice_mix', class: 'wide' %></li>
+        </ol>
+
+        <h4>セリフ</h4>
+        <ol>
+            <li><%= f.text_field :voice_line_1, size: 50, id: 'voice_line_1', class: 'wide' %></li>
+            <li><%= f.text_field :voice_line_2, size: 50, id: 'voice_line_2', class: 'wide' %></li>
+            <li><%= f.text_field :voice_line_3, size: 50, id: 'voice_line_3', class: 'wide' %></li>
+            <li><%= f.text_field :voice_line_4, size: 50, id: 'voice_line_4', class: 'wide' %></li>
+        </ol>
+
+        <h4>ナレーション</h4>
+        <ol>
+            <li><%= f.text_field :voice_narration_1, size: 50, id: 'voice_narration_1', class: 'wide' %></li>
+            <li><%= f.text_field :voice_narration_2, size: 50, id: 'voice_narration_2', class: 'wide' %></li>
+            <li><%= f.text_field :voice_narration_3, size: 50, id: 'voice_narration_3', class: 'wide' %></li>
+            <li><%= f.text_field :voice_narration_4, size: 50, id: 'voice_narration_4', class: 'wide' %></li>
+        </ol>
+
+        <h4>フリートーク</h4>
+        <ol>
+            <li><%= f.text_field :voice_talk_1, size: 50, id: 'voice_talk_1', class: 'wide' %></li>
+            <li><%= f.text_field :voice_talk_2, size: 50, id: 'voice_talk_2', class: 'wide' %></li>
+            <li><%= f.text_field :voice_talk_3, size: 50, id: 'voice_talk_3', class: 'wide' %></li>
+            <li><%= f.text_field :voice_talk_4, size: 50, id: 'voice_talk_4', class: 'wide' %></li>
+        </ol>
+
+        <h4>その他</h4>
+        <ol>
+            <li><%= f.text_field :voice_other_1, size: 50, id: 'voice_other_1', class: 'wide' %></li>
+            <li><%= f.text_field :voice_other_2, size: 50, id: 'voice_other_2', class: 'wide' %></li>
+            <li><%= f.text_field :voice_other_3, size: 50, id: 'voice_other_3', class: 'wide' %></li>
+            <li><%= f.text_field :voice_other_4, size: 50, id: 'voice_other_4', class: 'wide' %></li>
+        </ol>
+
+        <p class="btn_add"><input name="save" type="image" src="/admin/img/btn_reg.png" alt="登録"></p>
+        <% end %>
+    </div><!--/voice_inner-->

@@ -1,0 +1,52 @@
+<% @parent = {"/talents" => "タレント一覧", "/talents/" + @talent.id.to_s => @talent.name} %>
+<% @mypage = "ボイスサンプル管理" %>
+
+<p id="notice"><%= notice %></p>
+
+    <h2><%= @mypage %></h2>
+
+    <div class="voice_inner">
+        <h3 class="talent_name"><%= @talent.name %></h3>
+
+        <form>
+        <h4>MIX SAMPLE</h4>
+        <ol>
+            <li><%= render 'youtube', {url: @talent.voice_mix} %></li>
+        </ol>
+
+        <h4>セリフ</h4>
+        <ol>
+            <li><%= render 'youtube', {url: @talent.voice_line_1} %></li>
+            <li><%= render 'youtube', {url: @talent.voice_line_2} %></li>
+            <li><%= render 'youtube', {url: @talent.voice_line_3} %></li>
+            <li><%= render 'youtube', {url: @talent.voice_line_4} %></li>
+        </ol>
+
+        <h4>ナレーション</h4>
+        <ol>
+            <li><%= render 'youtube', {url: @talent.voice_narration_1} %></li>
+            <li><%= render 'youtube', {url: @talent.voice_narration_2} %></li>
+            <li><%= render 'youtube', {url: @talent.voice_narration_3} %></li>
+            <li><%= render 'youtube', {url: @talent.voice_narration_4} %></li>
+        </ol>
+
+        <h4>フリートーク</h4>
+        <ol>
+            <li><%= render 'youtube', {url: @talent.voice_talk_1} %></li>
+            <li><%= render 'youtube', {url: @talent.voice_talk_2} %></li>
+            <li><%= render 'youtube', {url: @talent.voice_talk_3} %></li>
+            <li><%= render 'youtube', {url: @talent.voice_talk_4} %></li>
+        </ol>
+
+        <h4>その他</h4>
+        <ol>
+            <li><%= render 'youtube', {url: @talent.voice_other_1} %></li>
+            <li><%= render 'youtube', {url: @talent.voice_other_2} %></li>
+            <li><%= render 'youtube', {url: @talent.voice_other_3} %></li>
+            <li><%= render 'youtube', {url: @talent.voice_other_4} %></li>
+        </ol>
+
+        <p class="btn_add"><%= link_to raw('<img src="/admin/img/btn_edit_talent.png" alt="編集">'), edit_admin_voice_path(@talent) %></p>
+
+        </form>
+    </div><!--/voice_inner-->
