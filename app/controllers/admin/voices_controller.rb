@@ -12,12 +12,12 @@ class Admin::VoicesController < ApplicationController
   # PATCH/PUT /admin/voices/1
   def update
     respond_to do |format|
-      if @talent.update(voice_params)
-        format.html { redirect_to :action => "show", notice: 'データを登録しました。' }
-        format.json { render :show, status: :ok, location: @talent }
+      if @voice.update(voice_params)
+        format.html { redirect_to ({:action => 'show'}), :notice => 'データを登録しました。' }
+        format.json { render :show, status: :ok, location: @voice }
       else
         format.html { render :edit }
-        format.json { render json: @talent.errors, status: :unprocessable_entity }
+        format.json { render json: @voice.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -25,7 +25,7 @@ class Admin::VoicesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_voice
-      @talent = Talent.find(params[:id])
+      @voice = Talent.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

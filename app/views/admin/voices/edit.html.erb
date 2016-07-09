@@ -1,4 +1,4 @@
-<% @parent = {"/talents" => "タレント一覧", "/talents/" + @talent.id.to_s => @talent.name} %>
+<% @parent = {"/talents" => "タレント一覧", "/talents/" + @voice.id.to_s => @voice.name} %>
 <% @mypage = "ボイスサンプル管理 - 入力" %>
 
 <p id="notice"><%= notice %></p>
@@ -6,9 +6,9 @@
     <h2><%= @mypage %></h2>
 
     <div class="voice_inner">
-        <h3 class="talent_name"><%= @talent.name %></h3>
+        <h3 class="talent_name"><%= @voice.name %></h3>
 
-        <%= form_for @talent, :url => {:action => 'update'} do |f| %>
+        <%= form_for @voice, :url => {:action => 'update'} do |f| %>
         <h4>MIX SAMPLE</h4>
         <ol>
             <li><%= f.text_field :voice_mix, size: 50, id: 'voice_mix', class: 'wide' %></li>
