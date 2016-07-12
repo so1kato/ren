@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  talent_id: 1
+  job_category_id: 1
+  title: MyString
+  cast: MyString
+  bold_flg: false
+  subtitle_flg: false
+  display_flg: false
+  sort: 1
+
+two:
+  talent_id: 1
+  job_category_id: 1
+  title: MyString
+  cast: MyString
+  bold_flg: false
+  subtitle_flg: false
+  display_flg: false
+  sort: 1

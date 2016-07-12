@@ -6,13 +6,13 @@
     <h2><%= @mypage %></h2>
 
     <div class="result_inner">
-    <form method="post">
-        <h3 class="talent_name">青柳 ミエ</h3>
+    <%= form_tag do %>
+        <h3 class="talent_name"><%= @talent.name %></h3>
 
         <div id="">
 
         <section class="block">
-            <p class="sub_ttl">吹き替え</p>
+            <p class="sub_ttl"><%= @category.name %></p>
 
             <table width="0" border="0" cellspacing="0" cellpadding="0">
                 <tr>
@@ -24,20 +24,22 @@
                     <th nowrap scope="col">表示</th>
                     <th nowrap scope="col">削除</th>
                 </tr>
-
+                <% sort_val = 10 %>
+                <% @jobs.each do |job, job_id| %>
                 <tr>
-                    <td><input name="sort[4774]" type="text" size="3" value="10" class="number"></td>
-                    <td><input name="title[4774]" type="text" size="40" value="スピード"></td>
-                    <td><input name="cast[4774]" type="text" size="25" value=" "></td>
-                    <td><input type="checkbox" name="bold_flg[4774]" id="checkbox" value="1" ></td>
-                    <td><input type="checkbox" name="subtitle_flg[4774]" id="checkbox" value="1" ></td>
-                    <td><input type="checkbox" name="display_flg[4774]" id="checkbox" value="1" checked></td>
-                    <td><input type="checkbox" name="delete[4774]" id="checkbox" value="1"></td>
+                    <td><input name="sort[<%= job.id %>]" type="text" size="3" value="<%= sort_val %>" class="number"></td>
+                    <td><input name="title[<%= job.id %>]" type="text" size="40" value="<%= job.title %>"></td>
+                    <td><input name="cast[<%= job.id %>]" type="text" size="25" value="<%= job.cast %>"></td>
+                    <td><input type="checkbox" name="bold_flg[<%= job.id %>]" id="checkbox" value="1" <% if job.bold_flg %>checked<% end %>></td>
+                    <td><input type="checkbox" name="subtitle_flg[<%= job.id %>]" id="checkbox" value="1" <% if job.subtitle_flg %>checked<% end %>></td>
+                    <td><input type="checkbox" name="display_flg[<%= job.id %>]" id="checkbox" value="1" <% if job.display_flg %>checked<% end %>></td>
+                    <td><input type="checkbox" name="delete[<%= job.id %>]" id="checkbox" value="1"></td>
                 </tr>
-
+                  <% sort_val = sort_val.to_i + 10 %>
+                <% end %>
 
                 <tr>
-                    <td><input name="sort[-1]" type="text" size="3" value="120" class="number"></td>
+                    <td><input name="sort[-1]" type="text" size="3" value="<%= sort_val %>" class="number"></td>
                     <td><input name="title[-1]" type="text" size="40" value=""></td>
                     <td><input name="cast[-1]" type="text" size="25" value=""></td>
                     <td><input type="checkbox" name="bold_flg[-1]" id="checkbox" value="1"></td>
@@ -51,6 +53,6 @@
         </div><!--/#sortable-->
 
         <p class="btn_add"><input type="image" name="save" src="/admin/img/btn_reg.png" alt="登録"></p>
+    <% end %>
 
-    </form>
     </div><!--/job_inner-->
