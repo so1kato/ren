@@ -1,0 +1,51 @@
+<% @parent = {"/talents" => "タレント一覧", "/talents/" + @talent.id.to_s => @talent.name} %>
+<% @mypage = "実績カテゴリ一覧" %>
+<%= debug @params %>
+
+<p id="notice"><%= notice %></p>
+
+    <h2><%= @mypage %></h2>
+
+    <div class="result_inner">
+    <%= form_tag do %>
+        <h3 class="talent_name"><%= @talent.name %></h3>
+
+        <div id="">
+
+        <section class="block">
+            <table width="0" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th nowrap scope="col">順番</th>
+                    <th scope="col">カテゴリ名</th>
+                    <th nowrap scope="col">表示</th>
+                    <th nowrap scope="col">削除</th>
+                    <th nowrap scope="col">実績</th>
+                </tr>
+                <% sort_val = 10 %>
+                <% @categories.each do |category, category_id| %>
+                <tr>
+                    <td><input name="sort[<%= category.id %>]" type="text" size="3" value="<%= sort_val %>" class="number"></td>
+                    <td><input name="name[<%= category.id %>]" type="text" size="80" value="<%= category.name %>" class=""></td>
+                    <td><input type="checkbox" name="display_flg[<%= category.id %>]" id="checkbox" value="1" <% if category.display_flg %>checked<% end %>></td>
+                    <td><input type="checkbox" name="delete[<%= category.id %>]" id="checkbox" value="1" ></td>
+                    <td><a href="/admin/jobs/detail/<%= category.id %>">実績</a></td>
+                </tr>
+                  <% sort_val = sort_val.to_i + 10 %>
+                <% end %>
+
+                <tr>
+                    <td><input name="sort[-1]" type="text" size="3" value="<%= sort_val %>" class="number"></td>
+                    <td><input name="name[-1]" type="text" size="80" value="" class=""></td>
+                    <td><input type="checkbox" name="display_flg[-1]" id="checkbox" value="1" checked></td>
+                    <td><input type="checkbox" name="delete[-1]" id="checkbox" value="1" disabled="disabled"></td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </section>
+
+        </div><!--/#sortable-->
+
+        <p class="btn_add"><input type="image" name="save" src="/admin/img/btn_reg.png" alt="登録"></p>
+    <% end %>
+
+    </div><!--/job_inner-->

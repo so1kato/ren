@@ -14,6 +14,11 @@ Rails.application.routes.draw do
     get 'sites/logout/' => 'sites#logout'
     post 'sites/auth/' => 'sites#auth'
 
+    get 'jobs/:id' => 'jobs#index'
+    post 'jobs/:id' => 'jobs#index'
+    get 'jobs/detail/:id' => 'jobs#detail'
+    post 'jobs/detail/:id' => 'jobs#detail'
+
     resources :administrators
     resources :talents
     resources :voices

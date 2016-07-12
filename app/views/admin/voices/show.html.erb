@@ -8,7 +8,6 @@
     <div class="voice_inner">
         <h3 class="talent_name"><%= @voice.name %></h3>
 
-        <form>
         <h4>MIX SAMPLE</h4>
         <ol>
             <li><%= render 'youtube', {url: @voice.voice_mix} %></li>
@@ -48,5 +47,4 @@
 
         <p class="btn_add"><%= link_to raw('<img src="/admin/img/btn_edit_talent.png" alt="編集">'), edit_admin_voice_path(@voice) %></p>
 
-        </form>
     </div><!--/voice_inner-->

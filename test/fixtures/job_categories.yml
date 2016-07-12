@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  talent_id: 1
+  name: MyString
+  display_flg: false
+  sort: 1
+
+two:
+  talent_id: 1
+  name: MyString
+  display_flg: false
+  sort: 1
