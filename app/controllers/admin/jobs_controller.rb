@@ -8,7 +8,7 @@ class Admin::JobsController < ApplicationController
     if !params['name'].nil?
       params['name'].each do |id, val|
         if id.to_i > 0
-          display_flg = params['display_flg'][id] ? true : false
+          display_flg = param_checked?('display_flg', id)
           update_data = {"name" => params['name'][id], "sort" => params['sort'][id], "display_flg" => display_flg}
           JobCategory.update(id.to_i, update_data)
         end
@@ -24,7 +24,7 @@ class Admin::JobsController < ApplicationController
 
     # 新規登録
     if !params['name'].nil? && !params['name']['-1'].empty? 
-        display_flg = params['display_flg']['-1'] ? true : false
+        display_flg = param_checked?('display_flg', '-1')
         new_data = {"talent_id" => params[:id], "name" => params['name']['-1'], "sort" => params['sort']['-1'], "display_flg" => display_flg}
         new_category = JobCategory.new(new_data)
         new_category.save
@@ -34,7 +34,6 @@ class Admin::JobsController < ApplicationController
   end
 
   def detail
-@params = params
     @category = JobCategory.find(params[:id])
     @talent = Talent.find(@category.talent_id)
 
@@ -42,9 +41,9 @@ class Admin::JobsController < ApplicationController
     if !params['title'].nil?
       params['title'].each do |id, val|
         if id.to_i > 0
-          bold_flg = params['bold_flg'][id] ? true : false
-          subtitle_flg = params['subtitle_flg'][id] ? true : false
-          display_flg = params['display_flg'][id] ? true : false
+          bold_flg = param_checked?('bold_flg', id)
+          subtitle_flg = param_checked?('display_flg', id)
+          display_flg = param_checked?('display_flg', id)
           update_data = {"title" => params['title'][id], "cast" => params['cast'][id], "sort" => params['sort'][id], "bold_flg" => bold_flg, "subtitle_flg" => subtitle_flg, "display_flg" => display_flg}
           Job.update(id.to_i, update_data)
         end
@@ -60,9 +59,9 @@ class Admin::JobsController < ApplicationController
 
     # 新規登録
     if !params['title'].nil? && !params['title']['-1'].empty? 
-        bold_flg = params['bold_flg']['-1'] ? true : false
-        subtitle_flg = params['subtitle_flg']['-1'] ? true : false
-        display_flg = params['display_flg']['-1'] ? true : false
+        bold_flg = param_checked?('bold_flg', '-1')
+        subtitle_flg = param_checked?('subtitle_flg', '-1')
+        display_flg = param_checked?('display_flg', '-1')
         new_data = {"job_category_id" => params[:id], "title" => params['title']['-1'], "cast" => params['cast']['-1'], "sort" => params['sort']['-1'], "bold_flg" => bold_flg, "subtitle_flg" => subtitle_flg, "display_flg" => display_flg}
         new_job = Job.new(new_data)
         new_job.save
@@ -70,4 +69,9 @@ class Admin::JobsController < ApplicationController
 
     @jobs = Job.where(job_category_id: params[:id]).order(sort: :asc, id: :asc)
   end
+
+  private
+    def param_checked?(att, id)
+      ret = (!params[att].nil? && params[att][id]) ? true : false
+    end
 end

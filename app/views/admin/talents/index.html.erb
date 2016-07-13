@@ -3,6 +3,9 @@
     <h2><%= @mypage %></h2>
 
     <form action="/admin/talents/csv" method="post" name="form1">
+
+    <%= form_tag('/csv', :method => :post, :name => 'form1') do %>
+
     <table width="0" border="0" cellspacing="0" cellpadding="0" class="talent_list">
         <tr>
             <th scope="col"><input name="all" type="checkbox"  onChange="
@@ -48,4 +51,4 @@
         </tr>
     </table>
 
-    </form>
+    <% end %>
