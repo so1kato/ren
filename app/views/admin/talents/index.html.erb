@@ -8,9 +8,7 @@
 
     <table width="0" border="0" cellspacing="0" cellpadding="0" class="talent_list">
         <tr>
-            <th scope="col"><input name="all" type="checkbox"  onChange="
-                var checks = []; for (i=0; i<checks.length; i++) document.getElementById('check[' + checks[i] + ']').checked = this.checked ;">
-            </th>
+            <th scope="col"><input type="checkbox" id="check-all"></th>
             <th scope="col">ID</th>
             <th scope="col">名前</th>
             <th scope="col">所属</th>
@@ -25,7 +23,7 @@
               <td class="cb">
                   <div class="input checkbox">
                       <input type="hidden" name="check[<%= talent.id %>]" value="0"/>
-                      <input type="checkbox" name="check[<%= talent.id %>]" value="1" id="check[<%= talent.id %>]">
+                      <input type="checkbox" name="check[<%= talent.id %>]" value="1" id="check[<%= talent.id %>]" class="csv-check">
                   </div>
               </td>
               <td><%= talent.code %></td>
@@ -52,3 +50,11 @@
     </table>
 
     <% end %>
+
+<script type="text/javascript">
+<!--
+$('#check-all').on('click', function() {
+  $('input.csv-check:checkbox').prop('checked', $(this).is(':checked'));  
+});
+// -->
+</script>
