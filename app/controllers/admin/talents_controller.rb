@@ -1,4 +1,5 @@
 class Admin::TalentsController < ApplicationController
+
   before_action :set_talent, only: [:show, :edit, :update, :destroy]
   before_action :set_params
 
@@ -84,14 +85,11 @@ class Admin::TalentsController < ApplicationController
   end
 
   def csv
-    talents = Talent.where()
+    checks = params['check'].delete_if {|key, val| val == '0' }.keys
+    talents = Talent.find(checks)
     csv = TalentCsvBuilder::TalentCsvOutput.new
-    send_data(csv.output(talents), filename: 'talent.csv', disposition: 'attachment')
-  end
-
-  def csv1
-    @talents = Talent.where()
-    send_data Talent.to_csv
+    csv.setParam('category_list', @category_list)
+    send_data(csv.output(talents), filename: 'talent_' + Time.now.strftime("%Y%m%d%H%M") + '.csv', disposition: 'attachment')
   end
 
   private
