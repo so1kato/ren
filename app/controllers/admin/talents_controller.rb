@@ -84,6 +84,14 @@ class Admin::TalentsController < ApplicationController
   end
 
   def csv
+    talents = Talent.where()
+    csv = TalentCsvBuilder::TalentCsvOutput.new
+    send_data(csv.output(talents), filename: 'talent.csv', disposition: 'attachment')
+  end
+
+  def csv1
+    @talents = Talent.where()
+    send_data Talent.to_csv
   end
 
   private

@@ -1,3 +1,4 @@
+require 'csv'
 class Talent < ActiveRecord::Base
 
   validates :category_id,
@@ -40,4 +41,12 @@ class Talent < ActiveRecord::Base
   validates :url_ins,
     format: { with: /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, allow_blank: true, message: 'URLを登録しください' }
 
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |talent|
+        csv << talent.attributes.values_at(*column_names).map{|v| v.to_s.encode('Shift_JIS', undef: :replace, replace: '')}
+      end
+    end
+  end
 end
