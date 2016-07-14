@@ -126,23 +126,23 @@
                 <% @talent.errors.messages[:url_ins].each do |message| %><p class="error"><%= message %></p><% end %>
             </td>
         </tr>
-<%
-=begin
-%>
         <tr>
             <th scope="row"><span>※</span>写真1</th>
             <td>
-                <div class="input file"><%= f.text_field :image1, size: 50, id: 'image1', class: 'wide' %></div>
+                <div class="input file"><%= f.file_field :image1, size: 50, id: 'image1', class: 'wide' %></div>
                 <% @talent.errors.messages[:image1].each do |message| %><p class="error"><%= message %></p><% end %>
             </td>
         </tr>
         <tr>
             <th scope="row">写真２</th>
             <td>
-                <div class="input file"><%= f.text_field :image2, size: 50, id: 'image2', class: 'wide' %></div>
+                <div class="input file"><%= f.file_field :image2, size: 50, id: 'image2', class: 'wide' %></div>
                 <% @talent.errors.messages[:image2].each do |message| %><p class="error"><%= message %></p><% end %>
             </td>
         </tr>
+<%
+=begin
+%>
         <tr>
             <th scope="row">PDF</th>
             <td>

@@ -68,11 +68,11 @@
         </tr>
         <tr>
             <th scope="row">写真１</th>
-            <td><%= @talent.code %></td>
+            <td><%= image_tag @talent.image1.url(:original) %></td>
         </tr>
         <tr>
             <th scope="row">写真２</th>
-            <td><%= @talent.code %></td>
+            <td><%= image_tag @talent.image2.url(:original) %></td>
         </tr>
         <tr>
             <th scope="row">PDF</th>

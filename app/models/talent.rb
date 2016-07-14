@@ -1,6 +1,10 @@
 require 'csv'
 class Talent < ActiveRecord::Base
 
+  has_attached_file :image1
+  has_attached_file :image2
+#  has_attached_file :image1, styles: { medium: "300x300>", thumb: "100x100>" }
+
   validates :category_id,
     presence: { message: 'カテゴリを選択しください'}
 
@@ -40,4 +44,7 @@ class Talent < ActiveRecord::Base
 
   validates :url_ins,
     format: { with: /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, allow_blank: true, message: 'URLを登録しください' }
+
+  validates_attachment :image1, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+  validates_attachment :image2, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 end
