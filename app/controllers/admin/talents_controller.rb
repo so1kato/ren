@@ -106,7 +106,7 @@ class Admin::TalentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def talent_params
-      params.require(:talent).permit(:name, :code, :name_kana, :name_eng, :category_id, :birth_month, :birth_day, :prefecture_id, :hometown, :hobby, :url_hp, :url_blog, :url_tw, :url_fb, :url_ins, :image1, :image2, :masterpiece, :display_flg)
+      params.require(:talent).permit(:name, :code, :name_kana, :name_eng, :category_id, :birth_month, :birth_day, :prefecture_id, :hometown, :hobby, :url_hp, :url_blog, :url_tw, :url_fb, :url_ins, :image1, :image2, :pdf, :masterpiece, :display_flg)
     end
 
     def category_list (category_id)

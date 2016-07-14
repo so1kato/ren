@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714094426) do
+ActiveRecord::Schema.define(version: 20160714095551) do
 
   create_table "administrators", force: :cascade do |t|
     t.string   "name"
@@ -89,6 +89,10 @@ ActiveRecord::Schema.define(version: 20160714094426) do
     t.string   "image2_content_type"
     t.integer  "image2_file_size"
     t.datetime "image2_updated_at"
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
   end
 
 end

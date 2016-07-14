@@ -76,7 +76,7 @@
         </tr>
         <tr>
             <th scope="row">PDF</th>
-            <td><%= @talent.code %></td>
+            <td><%= link_to @talent.pdf_file_name, @talent.pdf.url, { :target => "_blank"} %></td>
         </tr>
         <tr>
             <th scope="row">代表作</th>

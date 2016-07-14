@@ -140,16 +140,16 @@
                 <% @talent.errors.messages[:image2].each do |message| %><p class="error"><%= message %></p><% end %>
             </td>
         </tr>
-<%
-=begin
-%>
         <tr>
             <th scope="row">PDF</th>
             <td>
-                <div class="input file"><%= f.text_field :pdf, size: 50, id: 'pdf', class: 'wide' %></div>
+                <div class="input file"><%= f.file_field :pdf, size: 50, id: 'pdf', class: 'wide' %></div>
                 <% @talent.errors.messages[:pdf].each do |message| %><p class="error"><%= message %></p><% end %>
             </td>
         </tr>
+<%
+=begin
+%>
 <%
 =end
 %>

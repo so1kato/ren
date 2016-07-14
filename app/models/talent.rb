@@ -3,6 +3,7 @@ class Talent < ActiveRecord::Base
 
   has_attached_file :image1
   has_attached_file :image2
+  has_attached_file :pdf
 #  has_attached_file :image1, styles: { medium: "300x300>", thumb: "100x100>" }
 
   validates :category_id,
@@ -47,4 +48,5 @@ class Talent < ActiveRecord::Base
 
   validates_attachment :image1, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
   validates_attachment :image2, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+  validates_attachment :pdf, content_type: { content_type: ["application/pdf"] }
 end
