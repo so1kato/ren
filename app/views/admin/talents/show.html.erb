@@ -68,15 +68,27 @@
         </tr>
         <tr>
             <th scope="row">写真１</th>
-            <td><%= image_tag @talent.image1.url(:original) %></td>
+            <td>
+                <% unless @talent.image1_file_name.nil? %>
+                    <%= image_tag @talent.image1.url(:original) %>
+                <% end %>
+            </td>
         </tr>
         <tr>
             <th scope="row">写真２</th>
-            <td><%= image_tag @talent.image2.url(:original) %></td>
+            <td>
+                <% unless @talent.image2_file_name.nil? %>
+                    <%= image_tag @talent.image2.url(:original) %>
+                <% end %>
+            </td>
         </tr>
         <tr>
             <th scope="row">PDF</th>
-            <td><%= link_to @talent.pdf_file_name, @talent.pdf.url, { :target => "_blank"} %></td>
+            <td>
+                <% unless @talent.pdf_file_name.nil? %>
+                    <%= link_to raw('<img src="/admin/img/pdf.png" width="50">'), @talent.pdf.url, { :target => "_blank"} %>
+                <% end %>
+            </td>
         </tr>
         <tr>
             <th scope="row">代表作</th>
